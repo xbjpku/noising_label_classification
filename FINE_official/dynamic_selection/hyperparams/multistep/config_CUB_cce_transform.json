@@ -1,0 +1,75 @@
+{
+    "name": "CUB_resnet34_multistep",
+    "n_gpu": 1,
+    "seed": 123,
+
+    "arch": {
+        "type": "transform",
+        "args": {
+            "model_type": "ViT-B_16", "pretrained": "/home/xbj/lable_noising/pretrained/ViT-B_16.npz",
+             "num_classes":200, "img_size": 448, "zero_head": true, "vis": true, 
+        "smoothing_value": 0, "dataset": "CUB", "peer": true, "noise_rate": 0}
+    },
+
+    "num_classes": 200,
+
+    "data_loader": {
+        "type": "CUBDataLoader",
+        "args":{
+            "data_dir": "/home/xbj/lable_noising/release",
+            "batch_size": 16,
+            "shuffle": true,
+            "num_batches": 0,
+            "validation_split": 0,
+            "num_workers": 2,
+            "pin_memory": true
+        }
+    },
+
+
+    "optimizer": {
+        "type": "SGD",
+        "args":{
+            "lr": 0.01,
+            "momentum": 0.9,
+            "weight_decay": 1e-3
+        }
+    },
+    
+    "train_loss": {
+        "type": "CCELoss"
+    },
+
+    "val_loss": "CrossEntropyLoss",
+    "metrics": [
+        "my_metric", "my_metric2"
+    ],
+
+    "lr_scheduler": {
+        "type": "MultiStepLR",
+        "args": {
+            "milestones": [80,120],
+            "gamma": 0.01
+        },
+        "warmup": 1000
+    },
+
+    "trainer": {
+        "epochs": 150,
+        "warmup": 0,
+        "save_dir": "saved/",
+        "save_period": 1,
+        "verbosity": 2,
+        "label_dir": "saved/",       
+        "monitor": "max test_my_metric",
+        "early_stop": 2000,
+        "tensorboard": false,
+        "mlflow": true,
+        "_percent": "Percentage of noise",
+        "percent": 0.6,
+        "_begin": "When to begin updating labels",
+        "begin": 0,
+        "_asym": "symmetric noise if false",
+        "asym": false
+    }
+}

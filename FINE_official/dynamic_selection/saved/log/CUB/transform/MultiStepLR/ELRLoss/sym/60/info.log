@@ -1,0 +1,148 @@
+2023-06-10 07:00:01,987 - model.modeling - INFO - load_pretrained: resized variant: torch.Size([1, 197, 768]) to torch.Size([1, 785, 768])
+2023-06-10 07:00:02,567 - train - INFO - OrderedDict([('name', 'CUB_resnet34_multistep'), ('n_gpu', 1), ('seed', 123), ('arch', OrderedDict([('type', 'transform'), ('args', OrderedDict([('model_type', 'ViT-B_16'), ('pretrained', '/home/xbj/lable_noising/pretrained/ViT-B_16.npz'), ('num_classes', 200), ('img_size', 448), ('zero_head', True), ('vis', True), ('smoothing_value', 0), ('dataset', 'CUB'), ('peer', True), ('noise_rate', 0)]))])), ('num_classes', 200), ('data_loader', OrderedDict([('type', 'CUBDataLoader'), ('args', OrderedDict([('data_dir', '/home/xbj/lable_noising/release'), ('batch_size', 8), ('shuffle', True), ('num_batches', 0), ('validation_split', 0), ('num_workers', 2), ('pin_memory', True)]))])), ('optimizer', OrderedDict([('type', 'SGD'), ('args', OrderedDict([('lr', 0.01), ('momentum', 0.9), ('weight_decay', 0.001)]))])), ('train_loss', OrderedDict([('type', 'ELRLoss'), ('args', OrderedDict([('beta', 0.9), ('lambda', 7)]))])), ('val_loss', 'CrossEntropyLoss'), ('metrics', ['my_metric', 'my_metric2']), ('lr_scheduler', OrderedDict([('type', 'MultiStepLR'), ('warmup', 1000), ('args', OrderedDict([('milestones', [80, 120]), ('gamma', 0.01)]))])), ('trainer', OrderedDict([('epochs', 150), ('warmup', 0), ('save_dir', 'saved/'), ('save_period', 1), ('verbosity', 2), ('label_dir', 'saved/'), ('monitor', 'max test_my_metric'), ('early_stop', 2000), ('tensorboard', False), ('mlflow', True), ('_percent', 'Percentage of noise'), ('percent', 0.6), ('_begin', 'When to begin updating labels'), ('begin', 0), ('_asym', 'symmetric noise if false'), ('asym', False)]))])
+2023-06-10 07:05:16,249 - model.modeling - INFO - load_pretrained: resized variant: torch.Size([1, 197, 768]) to torch.Size([1, 785, 768])
+2023-06-10 07:05:16,719 - train - INFO - OrderedDict([('name', 'CUB_resnet34_multistep'), ('n_gpu', 1), ('seed', 123), ('arch', OrderedDict([('type', 'transform'), ('args', OrderedDict([('model_type', 'ViT-B_16'), ('pretrained', '/home/xbj/lable_noising/pretrained/ViT-B_16.npz'), ('num_classes', 200), ('img_size', 448), ('zero_head', True), ('vis', True), ('smoothing_value', 0), ('dataset', 'CUB'), ('peer', True), ('noise_rate', 0)]))])), ('num_classes', 200), ('data_loader', OrderedDict([('type', 'CUBDataLoader'), ('args', OrderedDict([('data_dir', '/home/xbj/lable_noising/release'), ('batch_size', 8), ('shuffle', True), ('num_batches', 0), ('validation_split', 0), ('num_workers', 2), ('pin_memory', True)]))])), ('optimizer', OrderedDict([('type', 'SGD'), ('args', OrderedDict([('lr', 0.01), ('momentum', 0.9), ('weight_decay', 0.001)]))])), ('train_loss', OrderedDict([('type', 'ELRLoss'), ('args', OrderedDict([('beta', 0.9), ('lambda', 7)]))])), ('val_loss', 'CrossEntropyLoss'), ('metrics', ['my_metric', 'my_metric2']), ('lr_scheduler', OrderedDict([('type', 'MultiStepLR'), ('warmup', 1000), ('args', OrderedDict([('milestones', [80, 120]), ('gamma', 0.01)]))])), ('trainer', OrderedDict([('epochs', 150), ('warmup', 0), ('save_dir', 'saved/'), ('save_period', 1), ('verbosity', 2), ('label_dir', 'saved/'), ('monitor', 'max test_my_metric'), ('early_stop', 2000), ('tensorboard', False), ('mlflow', True), ('_percent', 'Percentage of noise'), ('percent', 0.6), ('_begin', 'When to begin updating labels'), ('begin', 0), ('_asym', 'symmetric noise if false'), ('asym', False)]))])
+2023-06-10 07:16:17,013 - trainer - INFO -     epoch          : 1
+2023-06-10 07:16:17,014 - trainer - INFO -     loss           : 5.123661750042601
+2023-06-10 07:16:17,014 - trainer - INFO -     my_metric      : 0.16374434389140272
+2023-06-10 07:16:17,014 - trainer - INFO -     my_metric2     : 0.4731334841628959
+2023-06-10 07:16:17,014 - trainer - INFO -     my_metric_gt   : 0.1716628959276018
+2023-06-10 07:16:17,014 - trainer - INFO -     my_metric2_gt  : 0.47794117647058826
+2023-06-10 07:16:17,014 - trainer - INFO -     learning rate  : [0.00442]
+2023-06-10 07:16:17,015 - trainer - INFO -     purity:        : 0.5619343891402715 = 1987/3536
+2023-06-10 07:16:17,015 - trainer - INFO -     val_loss       : 4.663744033203966
+2023-06-10 07:16:17,015 - trainer - INFO -     val_my_metric  : 0.21831955922865015
+2023-06-10 07:16:17,015 - trainer - INFO -     val_my_metric2 : 0.6403236914600551
+2023-06-10 07:16:17,015 - trainer - WARNING - Warning: Metric 'test_my_metric' is not found. Model performance monitoring is disabled.
+2023-06-10 07:25:42,500 - trainer - INFO -     epoch          : 2
+2023-06-10 07:25:42,501 - trainer - INFO -     loss           : 3.349697162662696
+2023-06-10 07:25:42,501 - trainer - INFO -     my_metric      : 0.228789592760181
+2023-06-10 07:25:42,501 - trainer - INFO -     my_metric2     : 0.6750565610859729
+2023-06-10 07:25:42,501 - trainer - INFO -     my_metric_gt   : 0.21945701357466063
+2023-06-10 07:25:42,501 - trainer - INFO -     my_metric2_gt  : 0.6773190045248869
+2023-06-10 07:25:42,502 - trainer - INFO -     learning rate  : [0.00884]
+2023-06-10 07:25:42,502 - trainer - INFO -     purity:        : 0.5619343891402715 = 1987/3536
+2023-06-10 07:25:42,502 - trainer - INFO -     val_loss       : 2.764185802010465
+2023-06-10 07:25:42,502 - trainer - INFO -     val_my_metric  : 0.2753099173553719
+2023-06-10 07:25:42,502 - trainer - INFO -     val_my_metric2 : 0.6871556473829201
+2023-06-10 07:39:39,680 - trainer - INFO -     epoch          : 3
+2023-06-10 07:39:39,681 - trainer - INFO -     loss           : 2.8158478348627005
+2023-06-10 07:39:39,681 - trainer - INFO -     my_metric      : 0.2045107033639144
+2023-06-10 07:39:39,681 - trainer - INFO -     my_metric2     : 0.6112385321100917
+2023-06-10 07:39:39,681 - trainer - INFO -     my_metric_gt   : 0.23442278287461774
+2023-06-10 07:39:39,681 - trainer - INFO -     my_metric2_gt  : 0.65118501529052
+2023-06-10 07:39:39,681 - trainer - INFO -     learning rate  : [0.009968839595802982]
+2023-06-10 07:39:39,681 - trainer - INFO -     purity:        : 0.5120481927710844 = 1785/3486
+2023-06-10 07:39:39,681 - trainer - INFO -     val_loss       : 2.4106662871095432
+2023-06-10 07:39:39,681 - trainer - INFO -     val_my_metric  : 0.3143939393939394
+2023-06-10 07:39:39,681 - trainer - INFO -     val_my_metric2 : 0.7410468319559229
+2023-06-10 07:48:41,618 - trainer - INFO -     epoch          : 4
+2023-06-10 07:48:41,618 - trainer - INFO -     loss           : 3.3193170619667125
+2023-06-10 07:48:41,618 - trainer - INFO -     my_metric      : 0.1577790519877676
+2023-06-10 07:48:41,618 - trainer - INFO -     my_metric2     : 0.47219036697247707
+2023-06-10 07:48:41,618 - trainer - INFO -     my_metric_gt   : 0.16379969418960247
+2023-06-10 07:48:41,618 - trainer - INFO -     my_metric2_gt  : 0.4905389908256881
+2023-06-10 07:48:41,618 - trainer - INFO -     learning rate  : [0.00982690819416637]
+2023-06-10 07:48:41,618 - trainer - INFO -     purity:        : 0.5120481927710844 = 1785/3486
+2023-06-10 07:48:41,618 - trainer - INFO -     val_loss       : 2.41585923653332
+2023-06-10 07:48:41,619 - trainer - INFO -     val_my_metric  : 0.32007575757575757
+2023-06-10 07:48:41,619 - trainer - INFO -     val_my_metric2 : 0.7358815426997245
+2023-06-10 07:58:20,801 - trainer - INFO -     epoch          : 5
+2023-06-10 07:58:20,802 - trainer - INFO -     loss           : 2.117768955176772
+2023-06-10 07:58:20,802 - trainer - INFO -     my_metric      : 0.292420814479638
+2023-06-10 07:58:20,803 - trainer - INFO -     my_metric2     : 0.7542420814479638
+2023-06-10 07:58:20,803 - trainer - INFO -     my_metric_gt   : 0.3153280542986425
+2023-06-10 07:58:20,803 - trainer - INFO -     my_metric2_gt  : 0.7893099547511312
+2023-06-10 07:58:20,803 - trainer - INFO -     learning rate  : [0.009569145953692315]
+2023-06-10 07:58:20,803 - trainer - INFO -     purity:        : 0.5130311614730878 = 1811/3530
+2023-06-10 07:58:20,803 - trainer - INFO -     val_loss       : 2.3425998451295964
+2023-06-10 07:58:20,803 - trainer - INFO -     val_my_metric  : 0.3197314049586777
+2023-06-10 07:58:20,804 - trainer - INFO -     val_my_metric2 : 0.7698002754820936
+2023-06-10 09:52:17,929 - trainer - INFO -     epoch          : 6
+2023-06-10 09:52:17,930 - trainer - INFO -     loss           : 1.6673629865117743
+2023-06-10 09:52:17,930 - trainer - INFO -     my_metric      : 0.35774886877828055
+2023-06-10 09:52:17,931 - trainer - INFO -     my_metric2     : 0.8204185520361991
+2023-06-10 09:52:17,931 - trainer - INFO -     my_metric_gt   : 0.37952488687782804
+2023-06-10 09:52:17,931 - trainer - INFO -     my_metric2_gt  : 0.8461538461538461
+2023-06-10 09:52:17,931 - trainer - INFO -     learning rate  : [0.009202833017478422]
+2023-06-10 09:52:17,931 - trainer - INFO -     purity:        : 0.5130311614730878 = 1811/3530
+2023-06-10 09:52:17,931 - trainer - INFO -     val_loss       : 2.1075960230236213
+2023-06-10 09:52:17,932 - trainer - INFO -     val_my_metric  : 0.38980716253443526
+2023-06-10 09:52:17,932 - trainer - INFO -     val_my_metric2 : 0.8100895316804407
+2023-06-10 10:03:09,347 - trainer - INFO -     epoch          : 7
+2023-06-10 10:03:09,348 - trainer - INFO -     loss           : 1.5015874235794462
+2023-06-10 10:03:09,348 - trainer - INFO -     my_metric      : 0.4157088122605364
+2023-06-10 10:03:09,348 - trainer - INFO -     my_metric2     : 0.8546934865900384
+2023-06-10 10:03:09,348 - trainer - INFO -     my_metric_gt   : 0.39482758620689656
+2023-06-10 10:03:09,348 - trainer - INFO -     my_metric2_gt  : 0.8595785440613027
+2023-06-10 10:03:09,348 - trainer - INFO -     learning rate  : [0.008744778603945012]
+2023-06-10 10:03:09,348 - trainer - INFO -     purity:        : 0.5142446043165467 = 1787/3475
+2023-06-10 10:03:09,348 - trainer - INFO -     val_loss       : 2.033661843659792
+2023-06-10 10:03:09,348 - trainer - INFO -     val_my_metric  : 0.3973829201101928
+2023-06-10 10:03:09,348 - trainer - INFO -     val_my_metric2 : 0.8228305785123967
+2023-06-10 10:14:15,333 - trainer - INFO -     epoch          : 8
+2023-06-10 10:14:15,333 - trainer - INFO -     loss           : 1.0141861320227041
+2023-06-10 10:14:15,334 - trainer - INFO -     my_metric      : 0.4835249042145594
+2023-06-10 10:14:15,334 - trainer - INFO -     my_metric2     : 0.9080459770114943
+2023-06-10 10:14:15,334 - trainer - INFO -     my_metric_gt   : 0.41551724137931034
+2023-06-10 10:14:15,334 - trainer - INFO -     my_metric2_gt  : 0.8827586206896552
+2023-06-10 10:14:15,334 - trainer - INFO -     learning rate  : [0.008200548497424779]
+2023-06-10 10:14:15,334 - trainer - INFO -     purity:        : 0.5142446043165467 = 1787/3475
+2023-06-10 10:14:15,334 - trainer - INFO -     val_loss       : 2.1023910291923964
+2023-06-10 10:14:15,334 - trainer - INFO -     val_my_metric  : 0.3777548209366391
+2023-06-10 10:14:15,334 - trainer - INFO -     val_my_metric2 : 0.8338498622589532
+2023-06-10 10:31:48,704 - trainer - INFO -     epoch          : 9
+2023-06-10 10:31:48,704 - trainer - INFO -     loss           : 0.9173421535120949
+2023-06-10 10:31:48,705 - trainer - INFO -     my_metric      : 0.528604118993135
+2023-06-10 10:31:48,705 - trainer - INFO -     my_metric2     : 0.9078947368421053
+2023-06-10 10:31:48,705 - trainer - INFO -     my_metric_gt   : 0.43249427917620137
+2023-06-10 10:31:48,705 - trainer - INFO -     my_metric2_gt  : 0.8787185354691075
+2023-06-10 10:31:48,705 - trainer - INFO -     learning rate  : [0.007579677079215286]
+2023-06-10 10:31:48,705 - trainer - INFO -     purity:        : 0.5229226361031518 = 1825/3490
+2023-06-10 10:31:48,705 - trainer - INFO -     val_loss       : 2.217191417847783
+2023-06-10 10:31:48,705 - trainer - INFO -     val_my_metric  : 0.3701790633608815
+2023-06-10 10:31:48,705 - trainer - INFO -     val_my_metric2 : 0.8087121212121212
+2023-06-10 10:39:51,248 - trainer - INFO -     epoch          : 10
+2023-06-10 10:39:51,249 - trainer - INFO -     loss           : 0.45759344673811436
+2023-06-10 10:39:51,249 - trainer - INFO -     my_metric      : 0.5860983981693364
+2023-06-10 10:39:51,249 - trainer - INFO -     my_metric2     : 0.9430778032036613
+2023-06-10 10:39:51,250 - trainer - INFO -     my_metric_gt   : 0.4470823798627002
+2023-06-10 10:39:51,250 - trainer - INFO -     my_metric2_gt  : 0.8973112128146453
+2023-06-10 10:39:51,250 - trainer - INFO -     learning rate  : [0.0068988954776090065]
+2023-06-10 10:39:51,250 - trainer - INFO -     purity:        : 0.5229226361031518 = 1825/3490
+2023-06-10 10:39:51,251 - trainer - INFO -     val_loss       : 2.127311925257533
+2023-06-10 10:39:51,251 - trainer - INFO -     val_my_metric  : 0.39669421487603307
+2023-06-10 10:39:51,251 - trainer - INFO -     val_my_metric2 : 0.8240358126721763
+2023-06-10 10:49:22,509 - trainer - INFO -     epoch          : 11
+2023-06-10 10:49:22,510 - trainer - INFO -     loss           : 0.5274599157535499
+2023-06-10 10:49:22,510 - trainer - INFO -     my_metric      : 0.6405152224824356
+2023-06-10 10:49:22,510 - trainer - INFO -     my_metric2     : 0.9534543325526932
+2023-06-10 10:49:22,510 - trainer - INFO -     my_metric_gt   : 0.47365339578454335
+2023-06-10 10:49:22,510 - trainer - INFO -     my_metric2_gt  : 0.9077868852459017
+2023-06-10 10:49:22,511 - trainer - INFO -     learning rate  : [0.006190972266199539]
+2023-06-10 10:49:22,511 - trainer - INFO -     purity:        : 0.5161195779601406 = 1761/3412
+2023-06-10 10:49:22,511 - trainer - INFO -     val_loss       : 2.1434136229277314
+2023-06-10 10:49:22,511 - trainer - INFO -     val_my_metric  : 0.39996556473829203
+2023-06-10 10:49:22,511 - trainer - INFO -     val_my_metric2 : 0.8290289256198347
+2023-06-10 10:55:22,654 - trainer - INFO -     epoch          : 12
+2023-06-10 10:55:22,655 - trainer - INFO -     loss           : -0.0901782571990261
+2023-06-10 10:55:22,655 - trainer - INFO -     my_metric      : 0.7242388758782201
+2023-06-10 10:55:22,655 - trainer - INFO -     my_metric2     : 0.9809718969555035
+2023-06-10 10:55:22,655 - trainer - INFO -     my_metric_gt   : 0.49677985948477754
+2023-06-10 10:55:22,655 - trainer - INFO -     my_metric2_gt  : 0.9156908665105387
+2023-06-10 10:55:22,655 - trainer - INFO -     learning rate  : [0.0054566390826184885]
+2023-06-10 10:55:22,655 - trainer - INFO -     purity:        : 0.5161195779601406 = 1761/3412
+2023-06-10 10:55:22,655 - trainer - INFO -     val_loss       : 2.037764779792344
+2023-06-10 10:55:22,655 - trainer - INFO -     val_my_metric  : 0.418732782369146
+2023-06-10 10:55:22,655 - trainer - INFO -     val_my_metric2 : 0.8550275482093664
+2023-06-10 11:04:25,521 - trainer - INFO -     epoch          : 13
+2023-06-10 11:04:25,522 - trainer - INFO -     loss           : -0.055026355311443474
+2023-06-10 11:04:25,522 - trainer - INFO -     my_metric      : 0.7624716553287982
+2023-06-10 11:04:25,522 - trainer - INFO -     my_metric2     : 0.9776077097505669
+2023-06-10 11:04:25,522 - trainer - INFO -     my_metric_gt   : 0.5005102040816326
+2023-06-10 11:04:25,522 - trainer - INFO -     my_metric2_gt  : 0.9136621315192744
+2023-06-10 11:04:25,523 - trainer - INFO -     learning rate  : [0.004687789306688544]
+2023-06-10 11:04:25,523 - trainer - INFO -     purity:        : 0.5239716312056738 = 1847/3525
+2023-06-10 11:04:25,523 - trainer - INFO -     val_loss       : 2.179495709986726
+2023-06-10 11:04:25,523 - trainer - INFO -     val_my_metric  : 0.41356749311294766
+2023-06-10 11:04:25,523 - trainer - INFO -     val_my_metric2 : 0.8366046831955923

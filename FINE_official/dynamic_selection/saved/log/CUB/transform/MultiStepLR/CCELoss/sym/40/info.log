@@ -1,0 +1,14 @@
+2023-06-10 11:09:39,846 - model.modeling - INFO - load_pretrained: resized variant: torch.Size([1, 197, 768]) to torch.Size([1, 785, 768])
+2023-06-10 11:09:40,327 - train - INFO - OrderedDict([('name', 'CUB_resnet34_multistep'), ('n_gpu', 1), ('seed', 123), ('arch', OrderedDict([('type', 'transform'), ('args', OrderedDict([('model_type', 'ViT-B_16'), ('pretrained', '/home/xbj/lable_noising/pretrained/ViT-B_16.npz'), ('num_classes', 200), ('img_size', 448), ('zero_head', True), ('vis', True), ('smoothing_value', 0), ('dataset', 'CUB'), ('peer', True), ('noise_rate', 0)]))])), ('num_classes', 200), ('data_loader', OrderedDict([('type', 'CUBDataLoader'), ('args', OrderedDict([('data_dir', '/home/xbj/lable_noising/release'), ('batch_size', 16), ('shuffle', True), ('num_batches', 0), ('validation_split', 0), ('num_workers', 2), ('pin_memory', True)]))])), ('optimizer', OrderedDict([('type', 'SGD'), ('args', OrderedDict([('lr', 0.01), ('momentum', 0.9), ('weight_decay', 0.001)]))])), ('train_loss', OrderedDict([('type', 'CCELoss')])), ('val_loss', 'CrossEntropyLoss'), ('metrics', ['my_metric', 'my_metric2']), ('lr_scheduler', OrderedDict([('type', 'MultiStepLR'), ('args', OrderedDict([('milestones', [80, 120]), ('gamma', 0.01)])), ('warmup', 1000)])), ('trainer', OrderedDict([('epochs', 150), ('warmup', 0), ('save_dir', 'saved/'), ('save_period', 1), ('verbosity', 2), ('label_dir', 'saved/'), ('monitor', 'max test_my_metric'), ('early_stop', 2000), ('tensorboard', False), ('mlflow', True), ('_percent', 'Percentage of noise'), ('percent', 0.4), ('_begin', 'When to begin updating labels'), ('begin', 0), ('_asym', 'symmetric noise if false'), ('asym', False)]))])
+2023-06-10 11:23:04,385 - trainer - INFO -     epoch          : 1
+2023-06-10 11:23:04,386 - trainer - INFO -     loss           : 5.228541619618734
+2023-06-10 11:23:04,386 - trainer - INFO -     my_metric      : 0.1604
+2023-06-10 11:23:04,386 - trainer - INFO -     my_metric2     : 0.43753333333333333
+2023-06-10 11:23:04,386 - trainer - INFO -     my_metric_gt   : 0.21223333333333336
+2023-06-10 11:23:04,386 - trainer - INFO -     my_metric2_gt  : 0.5412
+2023-06-10 11:23:04,386 - trainer - INFO -     learning rate  : [0.00375]
+2023-06-10 11:23:04,386 - trainer - INFO -     purity:        : 0.6001001001001001 = 3597/5994
+2023-06-10 11:23:04,386 - trainer - INFO -     val_loss       : 4.985256589148656
+2023-06-10 11:23:04,386 - trainer - INFO -     val_my_metric  : 0.34452479338842973
+2023-06-10 11:23:04,386 - trainer - INFO -     val_my_metric2 : 0.7856404958677686
+2023-06-10 11:23:04,386 - trainer - WARNING - Warning: Metric 'test_my_metric' is not found. Model performance monitoring is disabled.
